@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "147363135995",
+    "firebase_url": "https://fir-1-4cac7-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fir-1-4cac7",
+    "storage_bucket": "fir-1-4cac7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147363135995:android:31cfc05cf70e69c9df4b5e",
+        "android_client_info": {
+          "package_name": "com.dam.favorloop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147363135995-sv9tuvh19n2dtmm9md25843sed7k615s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT1TvYyomrisUThkip6fw4AF1wNGqENds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147363135995-sv9tuvh19n2dtmm9md25843sed7k615s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147363135995:android:97ed88edf5b41fdbdf4b5e",
+        "android_client_info": {
+          "package_name": "com.dam.firebase1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147363135995-sv9tuvh19n2dtmm9md25843sed7k615s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT1TvYyomrisUThkip6fw4AF1wNGqENds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147363135995-sv9tuvh19n2dtmm9md25843sed7k615s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147363135995:android:2639c45d1003db1ddf4b5e",
+        "android_client_info": {
+          "package_name": "com.dam.pruebasredsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147363135995-sv9tuvh19n2dtmm9md25843sed7k615s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT1TvYyomrisUThkip6fw4AF1wNGqENds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147363135995-sv9tuvh19n2dtmm9md25843sed7k615s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

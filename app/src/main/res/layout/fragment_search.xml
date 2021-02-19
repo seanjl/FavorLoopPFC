@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SearchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amigos" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conocer gente" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <FrameLayout
+            android:id="@+id/searchContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabLayout" />
+
+    </RelativeLayout>
+
+</FrameLayout>

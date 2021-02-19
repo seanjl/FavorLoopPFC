@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FavorLoop</string>
+    <string name="login">Login</string>
+    <string name="tv_sign_up1">Don\'t have an account?</string>
+    <string name="tv_sign_up2">SIGN UP</string>
+    <string name="tv_sign_up">Sign Up</string>
+    <string name="tv_log_in">Already have an account?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem">Lorem ipsum dolor sit amet consectetur, adipiscing elit vestibulum posuere donec habitasse, non montes himenaeos odio. Tincidunt sagittis viverra aptent magnis cursus, quis felis blandit justo, tempus in taciti mus.</string>
+</resources>
