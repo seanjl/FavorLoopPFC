@@ -24,7 +24,7 @@
                 android:id="@+id/tab_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Conocer gente" />
+                android:text="Comunidad" />
 
         </com.google.android.material.tabs.TabLayout>
 

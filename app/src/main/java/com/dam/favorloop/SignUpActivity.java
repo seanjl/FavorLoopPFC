@@ -28,6 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText password;
 
     FirebaseAuth auth;
+    FirebaseDatabase database;
     DatabaseReference reference;
     ProgressDialog pd;
 
@@ -36,6 +37,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference();
         fullname = findViewById(R.id.fullname);
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);

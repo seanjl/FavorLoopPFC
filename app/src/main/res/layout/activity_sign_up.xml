@@ -112,7 +112,7 @@
         android:fontFamily="@font/nunito_sans"
         android:text="@string/tv_sign_up"
         android:textColor="@color/white"
-        android:onClick="irMain"
+        android:onClick="signUpUser"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

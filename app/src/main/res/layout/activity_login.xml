@@ -68,7 +68,7 @@
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito_sans"
-        android:onClick="irMain"
+        android:onClick="login"
         android:text="@string/login"
         android:textColor="@color/white"
         android:textSize="16sp"
