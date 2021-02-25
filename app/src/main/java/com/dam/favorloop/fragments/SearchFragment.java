@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.dam.favorloop.R;
 import com.google.android.material.tabs.TabLayout;
@@ -41,7 +42,7 @@ public class SearchFragment extends Fragment {
                 getFragmentManager().beginTransaction().replace(R.id.searchContainer, selectedFragment).commit();
 
             } else if (tab.getPosition() == 1) {
-                selectedFragment = new ConocerGenteFragment();
+                selectedFragment = new ComunidadFragment();
                 getFragmentManager().beginTransaction().replace(R.id.searchContainer, selectedFragment).commit();
             }
 
@@ -57,4 +58,6 @@ public class SearchFragment extends Fragment {
 
         }
     };
+
+
 }

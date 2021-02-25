@@ -4,17 +4,105 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.favorloop.R;
+import com.dam.favorloop.adapters.AmigosAdapter;
+import com.dam.favorloop.model.Usuario;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class AmigosFragment extends Fragment {
+
+    RecyclerView rvAmigos;
+    DatabaseReference reference;
+    AmigosAdapter adapter;
+    ArrayList<Usuario> listaUsuarios;
+    String id;
+    ArrayList<String> idList;
+    LinearLayout alerta;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_amigos, container, false);
+        View view = inflater.inflate(R.layout.fragment_amigos, container, false);
+
+        rvAmigos = view.findViewById(R.id.rvAmigos);
+        alerta = view.findViewById(R.id.alerta);
+        rvAmigos.setHasFixedSize(true);
+        rvAmigos.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        listaUsuarios = new ArrayList<>();
+        idList = new ArrayList<>();
+
+        id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        //TODO: Implementar recylcer view
+        readUsuarios();
+
+        return view;
     }
+
+    private void readUsuarios() {
+        reference = FirebaseDatabase.getInstance().getReference("Conexiones").child(id).child("siguiendo");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                idList.clear();
+                for (DataSnapshot snap : snapshot.getChildren()) {
+                    idList.add(snap.getKey());
+                }
+                mostrarUsuarios();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void mostrarUsuarios() {
+        reference = FirebaseDatabase.getInstance().getReference("Usuarios");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                listaUsuarios.clear();
+                for (DataSnapshot snap : snapshot.getChildren()) {
+                    Usuario user = snap.getValue(Usuario.class);
+                    for (String id : idList) {
+                        if (user.getId().equals(id)) {
+                            listaUsuarios.add(user);
+                        }
+                    }
+                }
+
+                if (listaUsuarios.isEmpty()) {
+                    alerta.setVisibility(View.VISIBLE);
+                }
+
+                adapter = new AmigosAdapter(listaUsuarios);
+                rvAmigos.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 }

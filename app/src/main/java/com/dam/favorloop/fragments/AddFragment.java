@@ -27,7 +27,7 @@ public class AddFragment extends Fragment {
         tabLayoutAdd.addOnTabSelectedListener(listener);
         flAddContainer = view.findViewById(R.id.flAddContainer);
 
-        selectedFragment = new PublicarPostFragment();
+        selectedFragment = new PublicarLoopFragment();
         getFragmentManager().beginTransaction().replace(R.id.flAddContainer, selectedFragment).commit();
 
         return view;
@@ -37,7 +37,7 @@ public class AddFragment extends Fragment {
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
             if (tab.getPosition() == 0) {
-                selectedFragment = new PublicarPostFragment();
+                selectedFragment = new PublicarLoopFragment();
                 getFragmentManager().beginTransaction().replace(R.id.flAddContainer, selectedFragment).commit();
 
             } else if (tab.getPosition() == 1) {

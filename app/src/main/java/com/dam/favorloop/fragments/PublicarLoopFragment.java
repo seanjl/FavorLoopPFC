@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import com.dam.favorloop.R;
 
-public class PublicarPostFragment extends Fragment {
+public class PublicarLoopFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
