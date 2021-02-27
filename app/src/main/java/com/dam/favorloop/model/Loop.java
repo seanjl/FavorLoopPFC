@@ -1,6 +1,9 @@
 package com.dam.favorloop.model;
 
-public class Loop {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Loop implements Parcelable {
 
     private String id;
     private String titulo;
@@ -18,6 +21,26 @@ public class Loop {
         this.imageUrl = imageUrl;
         this.publisher = publisher;
     }
+
+    protected Loop(Parcel in) {
+        id = in.readString();
+        titulo = in.readString();
+        descripcion = in.readString();
+        imageUrl = in.readString();
+        publisher = in.readString();
+    }
+
+    public static final Creator<Loop> CREATOR = new Creator<Loop>() {
+        @Override
+        public Loop createFromParcel(Parcel in) {
+            return new Loop(in);
+        }
+
+        @Override
+        public Loop[] newArray(int size) {
+            return new Loop[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -57,5 +80,30 @@ public class Loop {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    @Override
+    public String toString() {
+        return "Loop{" +
+                "id='" + id + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", publisher='" + publisher + '\'' +
+                '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(titulo);
+        dest.writeString(descripcion);
+        dest.writeString(imageUrl);
+        dest.writeString(publisher);
     }
 }

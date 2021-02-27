@@ -1,6 +1,9 @@
 package com.dam.favorloop.model;
 
-public class Usuario {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Usuario implements Parcelable {
 
     private String id;
     private String fullname;
@@ -18,6 +21,26 @@ public class Usuario {
         this.fotoPerfilUrl = fotoPerfilUrl;
         this.bio = bio;
     }
+
+    protected Usuario(Parcel in) {
+        id = in.readString();
+        fullname = in.readString();
+        username = in.readString();
+        fotoPerfilUrl = in.readString();
+        bio = in.readString();
+    }
+
+    public static final Creator<Usuario> CREATOR = new Creator<Usuario>() {
+        @Override
+        public Usuario createFromParcel(Parcel in) {
+            return new Usuario(in);
+        }
+
+        @Override
+        public Usuario[] newArray(int size) {
+            return new Usuario[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -57,5 +80,19 @@ public class Usuario {
 
     public void setBio(String bio) {
         this.bio = bio;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(fullname);
+        dest.writeString(username);
+        dest.writeString(fotoPerfilUrl);
+        dest.writeString(bio);
     }
 }

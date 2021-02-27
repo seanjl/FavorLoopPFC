@@ -25,22 +25,37 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
-public class LoopAdapter extends RecyclerView.Adapter<LoopAdapter.LoopViewHolder> {
+public class LoopAdapter
+        extends RecyclerView.Adapter<LoopAdapter.LoopViewHolder>
+        implements View.OnClickListener {
 
     Context mContext;
     List<Loop> mPosts;
     FirebaseUser firebaseUser;
+
+    private View.OnClickListener listener;
 
     public LoopAdapter(Context mContext, List<Loop> mPosts) {
         this.mContext = mContext;
         this.mPosts = mPosts;
     }
 
+    public void setListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
+    }
+
     @NonNull
     @Override
     public LoopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.loop_item, parent, false);
-//        v.setOnClickListener(this);
+        v.setOnClickListener(this);
         LoopAdapter.LoopViewHolder ivh = new LoopAdapter.LoopViewHolder(v);
         return ivh;
     }
@@ -89,7 +104,6 @@ public class LoopAdapter extends RecyclerView.Adapter<LoopAdapter.LoopViewHolder
     public int getItemCount() {
         return mPosts.size();
     }
-
 
     public class LoopViewHolder extends RecyclerView.ViewHolder {
 
