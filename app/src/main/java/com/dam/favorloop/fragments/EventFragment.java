@@ -1,15 +1,19 @@
 package com.dam.favorloop.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dam.favorloop.EventoDetail;
+import com.dam.favorloop.LoopDetail;
 import com.dam.favorloop.R;
 import com.dam.favorloop.adapters.EventAdapter;
 import com.dam.favorloop.model.Evento;
@@ -23,6 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventFragment extends Fragment {
+
+    public static final String CLAVE_EVENTO = "EVENTO";
 
     RecyclerView rvEventos;
     EventAdapter adapter;
@@ -60,6 +66,17 @@ public class EventFragment extends Fragment {
                     listaEventos.add(event);
                 }
 
+                adapter.setListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int i = rvEventos.getChildAdapterPosition(v);
+                        Evento evento = listaEventos.get(i);
+
+                        Intent intentDatos = new Intent(getContext(), EventoDetail.class);
+                        intentDatos.putExtra(CLAVE_EVENTO, evento);
+                        startActivity(intentDatos);
+                    }
+                });
                 adapter.notifyDataSetChanged();
             }
 

@@ -19,22 +19,37 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
-public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
+public class EventAdapter
+        extends RecyclerView.Adapter<EventAdapter.EventViewHolder>
+        implements View.OnClickListener {
 
     Context mContext;
     List<Evento> mPosts;
     FirebaseUser firebaseUser;
+
+    private View.OnClickListener listener;
 
     public EventAdapter(Context mContext, List<Evento> mPosts) {
         this.mContext = mContext;
         this.mPosts = mPosts;
     }
 
+    public void setListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
+    }
+
     @NonNull
     @Override
     public EventViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_item, parent, false);
-//        v.setOnClickListener(this);
+        v.setOnClickListener(this);
         EventAdapter.EventViewHolder evh = new EventAdapter.EventViewHolder(v);
         return evh;
     }

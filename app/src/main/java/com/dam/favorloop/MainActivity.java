@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.dam.favorloop.fragments.AddFragment;
+import com.dam.favorloop.fragments.AmigosFragment;
 import com.dam.favorloop.fragments.EventFragment;
 import com.dam.favorloop.fragments.HomeFragment;
 import com.dam.favorloop.fragments.MessageFragment;
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment = new EventFragment();
 
             } else if (item.getItemId() == R.id.navProfile) {
-                selectedFragment = new ProfileFragment();
+                selectedFragment = new AmigosFragment();
 
             } else if (item.getItemId() == R.id.navSearch) {
                 selectedFragment = new SearchFragment();

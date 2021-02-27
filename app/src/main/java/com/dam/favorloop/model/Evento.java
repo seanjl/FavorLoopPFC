@@ -1,6 +1,9 @@
 package com.dam.favorloop.model;
 
-public class Evento {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Evento implements Parcelable {
 
     private String id;
     private String titulo;
@@ -20,6 +23,27 @@ public class Evento {
         this.imageUrl = imageUrl;
         this.publisher = publisher;
     }
+
+    protected Evento(Parcel in) {
+        id = in.readString();
+        titulo = in.readString();
+        descripcion = in.readString();
+        lugar = in.readString();
+        imageUrl = in.readString();
+        publisher = in.readString();
+    }
+
+    public static final Creator<Evento> CREATOR = new Creator<Evento>() {
+        @Override
+        public Evento createFromParcel(Parcel in) {
+            return new Evento(in);
+        }
+
+        @Override
+        public Evento[] newArray(int size) {
+            return new Evento[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -67,5 +91,20 @@ public class Evento {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(titulo);
+        dest.writeString(descripcion);
+        dest.writeString(lugar);
+        dest.writeString(imageUrl);
+        dest.writeString(publisher);
     }
 }

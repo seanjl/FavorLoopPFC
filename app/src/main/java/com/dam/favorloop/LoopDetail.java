@@ -29,7 +29,6 @@ public class LoopDetail extends AppCompatActivity {
     TextView tvOcupacionAy;
     CircleImageView ivUsuarioAy;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +77,5 @@ public class LoopDetail extends AppCompatActivity {
 
                     }
                 });
-
     }
-
 }
