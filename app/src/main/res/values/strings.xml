@@ -9,4 +9,20 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lorem">Lorem ipsum dolor sit amet consectetur, adipiscing elit vestibulum posuere donec habitasse, non montes himenaeos odio. Tincidunt sagittis viverra aptent magnis cursus, quis felis blandit justo, tempus in taciti mus.</string>
     <string name="iv_alerta">No tienes conexiones. Ve a la sección de Comunidad para encontrar nuevos amigos</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="et_info">Encuentra ayuda en nuestra comunidad</string>
+    <string name="et_loop">Publica un Loop</string>
+    <string name="et_evento">Publica un evento</string>
+    <string name="et_info_evento">Crea un evento para la comunidad</string>
 </resources>

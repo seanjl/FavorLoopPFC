@@ -1,5 +1,6 @@
 package com.dam.favorloop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(ResourcesHelper.resources == null){
+        if (ResourcesHelper.resources == null) {
             ResourcesHelper.resources = getResources();
         }
 
@@ -86,5 +87,8 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }
