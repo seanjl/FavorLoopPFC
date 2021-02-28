@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/tituloAyuda"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/loopImage"
             android:layout_marginStart="16dp"
@@ -56,8 +56,8 @@
             android:fontFamily="@font/nunito_sans_bold"
             android:gravity="center_horizontal"
             android:maxLines="2"
-            android:text="Se me quebró el pie necesito ayuda, además quiero un abrazo y mucho cariño"
-            android:textSize="22sp"
+            android:textSize="16sp"
+            android:text="Texto de prueba de ayuda"
             android:textStyle="bold" />
 
         <TextView
@@ -68,8 +68,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_sans"
-            android:text="27/12/2020"
-            android:textSize="16sp" />
+            android:text="27/12/2020" />
 
         <LinearLayout
             android:id="@+id/llCounter"
@@ -77,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tituloAyuda"
             android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
@@ -84,26 +84,9 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/like"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_help_icon" />
-
-            <TextView
-                android:id="@+id/likes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/like"
-                android:text="10"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
                 android:id="@+id/comment"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="16dp"
                 android:layout_toEndOf="@id/likes"
                 android:src="@drawable/ic_comment" />
 
@@ -114,9 +97,22 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_toEndOf="@id/like"
-                android:text="10"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="10" />
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_help_icon" />
+
+            <TextView
+                android:id="@+id/likes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/like"
+                android:text="10" />
 
         </LinearLayout>
 

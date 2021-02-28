@@ -25,7 +25,7 @@
             android:fontFamily="@font/nunito_sans_bold"
             android:maxLines="2"
             android:text="Reunión de ayuda en Alcobendas"
-            android:textSize="22sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTituloEvento"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/ivImageEvento"
             android:fontFamily="@font/nunito_sans"
             android:text="Madrid, ES"
@@ -44,10 +44,11 @@
             android:id="@+id/tvFecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvTituloEvento"
+            android:layout_below="@id/tvLugar"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/ivImageEvento"
             android:fontFamily="@font/nunito_sans"
             android:text="12/03/2021"
             android:textSize="16sp" />

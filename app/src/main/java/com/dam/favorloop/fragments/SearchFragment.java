@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.dam.favorloop.R;
 import com.google.android.material.tabs.TabLayout;
@@ -28,7 +27,7 @@ public class SearchFragment extends Fragment {
         tabLayout.addOnTabSelectedListener(listener);
         searchContainer = view.findViewById(R.id.searchContainer);
 
-        selectedFragment = new AmigosFragment();
+        selectedFragment = new TotalLoopsFragment();
         getFragmentManager().beginTransaction().replace(R.id.searchContainer, selectedFragment).commit();
 
         return view;
@@ -38,7 +37,7 @@ public class SearchFragment extends Fragment {
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
             if (tab.getPosition() == 0) {
-                selectedFragment = new AmigosFragment();
+                selectedFragment = new TotalLoopsFragment();
                 getFragmentManager().beginTransaction().replace(R.id.searchContainer, selectedFragment).commit();
 
             } else if (tab.getPosition() == 1) {
