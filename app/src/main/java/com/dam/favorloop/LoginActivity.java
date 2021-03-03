@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
         ProgressDialog pd = new ProgressDialog(LoginActivity.this);
-        pd.setMessage("Please wait...");
+        pd.setMessage("Por favor espere...");
         pd.show();
 
         String sEmail = emailLogin.getText().toString().trim();
@@ -91,5 +92,15 @@ public class LoginActivity extends AppCompatActivity {
     public void irMain(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser firebaseUser = auth.getCurrentUser();
+        if (firebaseUser != null) {
+            startActivity(new Intent(this, MainActivity.class));
+        }
     }
 }

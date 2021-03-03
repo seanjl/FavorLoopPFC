@@ -10,16 +10,18 @@ public class Loop implements Parcelable {
     private String descripcion;
     private String imageUrl;
     private String publisher;
+    private String fecha;
 
     public Loop() {
     }
 
-    public Loop(String id, String titulo, String descripcion, String imageUrl, String publisher) {
+    public Loop(String id, String titulo, String descripcion, String imageUrl, String publisher, String fecha) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.imageUrl = imageUrl;
         this.publisher = publisher;
+        this.fecha = fecha;
     }
 
     protected Loop(Parcel in) {
@@ -28,6 +30,7 @@ public class Loop implements Parcelable {
         descripcion = in.readString();
         imageUrl = in.readString();
         publisher = in.readString();
+        fecha = in.readString();
     }
 
     public static final Creator<Loop> CREATOR = new Creator<Loop>() {
@@ -82,6 +85,14 @@ public class Loop implements Parcelable {
         this.publisher = publisher;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
     @Override
     public String toString() {
         return "Loop{" +
@@ -105,5 +116,6 @@ public class Loop implements Parcelable {
         dest.writeString(descripcion);
         dest.writeString(imageUrl);
         dest.writeString(publisher);
+        dest.writeString(fecha);
     }
 }

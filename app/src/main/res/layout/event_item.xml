@@ -45,13 +45,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvLugar"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/ivImageEvento"
             android:fontFamily="@font/nunito_sans"
             android:text="12/03/2021"
             android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/comment"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/tvLugar"
+            android:layout_marginRight="8dp"
+            android:layout_toStartOf="@id/commentsCounter"
+            android:src="@drawable/ic_comment" />
+
+        <TextView
+            android:id="@+id/commentsCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLugar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:text="10" />
+
 
     </RelativeLayout>
 

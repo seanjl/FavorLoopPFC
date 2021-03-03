@@ -50,7 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     public void signUpUser(View view) {
         pd = new ProgressDialog(SignUpActivity.this);
-        pd.setMessage("Please wait...");
+        pd.setMessage("Por favor espere...");
         pd.show();
 
         String sFullname = fullname.getText().toString().trim();

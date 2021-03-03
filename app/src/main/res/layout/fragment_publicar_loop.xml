@@ -74,11 +74,29 @@
                     android:fontFamily="@font/nunito_sans"
                     android:hint="Descripción" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:gravity="center_horizontal"
+                    android:text="Fecha:" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/nunito_sans"
+                    android:gravity="center_horizontal"
+                    android:hint="Pulsa aquí para seleccionar una fecha"
+                    android:textSize="22sp" />
+
+
                 <LinearLayout
                     android:id="@+id/llFoto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
                     android:orientation="vertical">
 
                     <ImageView

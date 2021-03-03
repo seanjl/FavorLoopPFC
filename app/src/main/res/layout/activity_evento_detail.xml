@@ -55,7 +55,7 @@
                     android:layout_height="64dp"
                     android:layout_marginTop="40dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Quiero participar"
+                    android:text="Enviar un mensaje"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"

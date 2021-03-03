@@ -1,5 +1,6 @@
 package com.dam.favorloop.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dam.favorloop.MiPerfilActivity;
 import com.dam.favorloop.R;
 import com.dam.favorloop.adapters.AmigosAdapter;
 import com.dam.favorloop.model.Usuario;
@@ -22,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ComunidadFragment extends Fragment {
+
+    public static final String CLAVE_USUARIO = "USUARIO";
 
     RecyclerView rvComunidad;
     AmigosAdapter adapter;
@@ -54,6 +58,17 @@ public class ComunidadFragment extends Fragment {
                 }
 
                 adapter = new AmigosAdapter(listaUsuarios);
+                adapter.setListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int i = rvComunidad.getChildAdapterPosition(v);
+                        Usuario user = listaUsuarios.get(i);
+
+                        Intent intent = new Intent(v.getContext(), MiPerfilActivity.class);
+                        intent.putExtra(CLAVE_USUARIO, user);
+                        startActivity(intent);
+                    }
+                });
                 adapter.notifyDataSetChanged();
                 rvComunidad.setAdapter(adapter);
             }

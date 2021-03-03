@@ -1,15 +1,20 @@
 package com.dam.favorloop;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 import com.dam.favorloop.fragments.HomeFragment;
 import com.dam.favorloop.model.Loop;
 import com.dam.favorloop.model.Usuario;
@@ -28,6 +33,12 @@ public class LoopDetail extends AppCompatActivity {
     TextView tvNombreAy;
     TextView tvOcupacionAy;
     CircleImageView ivUsuarioAy;
+    Button btnAyudar;
+    ConstraintLayout infoUsuario;
+
+    String fotoPerfil = "";
+
+    Usuario userBusqueda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +52,8 @@ public class LoopDetail extends AppCompatActivity {
         ivUsuarioAy = findViewById(R.id.ivUsuarioAy);
         tvNombreAy = findViewById(R.id.tvNombreAy);
         tvOcupacionAy = findViewById(R.id.tvOcupacionAy);
+        btnAyudar = findViewById(R.id.btnAyudar);
+        infoUsuario = findViewById(R.id.infoUsuario);
 
         Loop loop = getIntent().getParcelableExtra(HomeFragment.CLAVE_LOOP);
         String id = getIntent().getStringExtra("USER");
@@ -61,13 +74,13 @@ public class LoopDetail extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for (DataSnapshot data : snapshot.getChildren()) {
-                            Usuario user = data.getValue(Usuario.class);
-                            tvNombreAy.setText(user.getFullname());
-                            tvOcupacionAy.setText(user.getUsername());
-                            Glide.with(getApplicationContext())
-                                    .load(user.getFotoPerfilUrl())
-                                    .transition(DrawableTransitionOptions.withCrossFade(500))
-                                    .placeholder(new ColorDrawable(getApplication().getResources().getColor(R.color.background)))
+                            userBusqueda = data.getValue(Usuario.class);
+                            tvNombreAy.setText(userBusqueda.getFullname());
+                            tvOcupacionAy.setText(userBusqueda.getUsername());
+                            fotoPerfil = userBusqueda.getFotoPerfilUrl();
+                            Glide.with(LoopDetail.this)
+                                    .load(fotoPerfil)
+                                    .apply(RequestOptions.circleCropTransform())
                                     .into(ivUsuarioAy);
                         }
                     }
@@ -77,5 +90,25 @@ public class LoopDetail extends AppCompatActivity {
 
                     }
                 });
+
+        btnAyudar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), CommentActivity.class);
+                i.putExtra("POST_ID", loop.getId());
+                i.putExtra("PUBLISHER_ID", loop.getPublisher());
+                startActivity(i);
+            }
+        });
+
+        infoUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MiPerfilActivity.class);
+                intent.putExtra("USUARIO", userBusqueda);
+                startActivity(intent);
+            }
+        });
     }
+
 }

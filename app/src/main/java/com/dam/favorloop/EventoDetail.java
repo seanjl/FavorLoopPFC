@@ -1,7 +1,10 @@
 package com.dam.favorloop;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +20,7 @@ public class EventoDetail extends AppCompatActivity {
     TextView tvEventoTitulo;
     TextView tvDescripcionEvento;
     ImageView ivEventoFoto;
+    Button btnParticipar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +30,9 @@ public class EventoDetail extends AppCompatActivity {
         ivEventoFoto = findViewById(R.id.ivEventoFoto);
         tvEventoTitulo = findViewById(R.id.tvEventoTitulo);
         tvDescripcionEvento = findViewById(R.id.tvDescripcionEvento);
+        btnParticipar = findViewById(R.id.btnParticipar);
 
-        Evento e = getIntent().getParcelableExtra(EventFragment.CLAVE_EVENTO);
+        Evento e = getIntent().getParcelableExtra("EVENTO");
 
         Glide.with(this)
                 .load(e.getImageUrl())
@@ -37,5 +42,16 @@ public class EventoDetail extends AppCompatActivity {
                 .into(ivEventoFoto);
         tvEventoTitulo.setText(e.getTitulo());
         tvDescripcionEvento.setText(e.getDescripcion());
+
+        btnParticipar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), CommentActivity.class);
+                i.putExtra("POST_ID", e.getId());
+                i.putExtra("PUBLISHER_ID", e.getPublisher());
+                startActivity(i);
+            }
+        });
+
     }
 }
