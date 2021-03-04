@@ -1,6 +1,5 @@
 # FavorLoopPFC | ¡Ayuda a gente de tu comunidad!
-## Proyecto Fin de Ciclo 2021 UEM  
-Desarrollado por:
+Proyecto Fin de Ciclo 2021 UEM desarrollado por:
 
 - Santiago Torres  
 - Nacho Jimenez  
