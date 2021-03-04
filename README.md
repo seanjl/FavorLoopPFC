@@ -1,10 +1,23 @@
 # FavorLoopPFC
 Proyecto Fin de Ciclo 2021 UEM
 
-Juan Moreno
-Nacho Jimenez
-Santiago Torres
-Sean Leitch
+| Santiago | Nacho | Sean | Juan |
+|-|-|-|-|
+
+FavorLoop es una app minimalista para solicitar y recibir ayuda de otras personas.
+
+¡CREA LOOPS!
+Publica un 'Loop' solicitando ayuda y alguién te responderá.
+
+¡ORGANIZA EVENTOS!
+Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitarias.
+
+~~~
+
+- Interfaz sencilla e intuitiva
+- Publica Loops para recibir ayuda
+- Conoce a gente nueva
+- Organiza eventos
 
 
 | Splash | Login | Signup | Home | Loops | Eventos | Publicar Loop | Perfil | Amigos |
