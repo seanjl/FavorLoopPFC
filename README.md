@@ -7,13 +7,13 @@ Desarrollado por:
 
 FavorLoop es una app minimalista para solicitar y recibir ayuda de otras personas.
 
-# ¡CREA LOOPS!  
+## ¡CREA LOOPS!  
 Publica un 'Loop' solicitando ayuda y alguién te responderá.
 
-# ¡ORGANIZA EVENTOS!  
+## ¡ORGANIZA EVENTOS!  
 Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitarias.
 
-# FEATURES:
+## FEATURES:
 
 ~~~
 
