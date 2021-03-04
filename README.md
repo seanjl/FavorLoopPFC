@@ -20,6 +20,8 @@ Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitar
 - Conoce a gente nueva
 - Organiza eventos
 
+~~~
+
 
 | Splash | Login | Signup | Home | Loops | Eventos | Publicar Loop | Perfil | Amigos |
 |:-:|:-:|:-:|:-:|-|-|-|-|-|
