@@ -2,18 +2,20 @@
 Proyecto Fin de Ciclo 2021 UEM  
 Desarrollado por:
 
-| Santiago | Nacho | Sean | Juan |
-|-|-|-|-|
+Santiago Torres  
+Nacho Jimenez  
+Sean Leitch  
+Juan Moreno  
 
-FavorLoop es una app minimalista para solicitar y recibir ayuda de otras personas.
+## FavorLoop es una app minimalista para solicitar y recibir ayuda de otras personas.
 
-## ¡CREA LOOPS!  
+### ¡CREA LOOPS!  
 Publica un 'Loop' solicitando ayuda y alguién te responderá.
 
-## ¡ORGANIZA EVENTOS!  
+### ¡ORGANIZA EVENTOS!  
 Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitarias.
 
-## FEATURES
+### FEATURES
 
 ~~~
 
