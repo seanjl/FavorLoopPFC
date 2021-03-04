@@ -29,3 +29,6 @@ Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitar
 | Splash | Login | Signup | Home | Loops | Eventos | Publicar Loop | Perfil | Amigos |
 |:-:|:-:|:-:|:-:|-|-|-|-|-|
 | ![](app/img/splash.jpg) | ![](app/img/login.jpg) | ![](app/img/signup.jpg) | ![](app/img/home.jpg) | ![](app/img/eventos.jpg) | ![](app/img/publicaciones.jpg) | ![](app/img/loops.jpg) | ![](app/img/perfil.jpg) | ![](app/img/busqueda.jpg) |
+
+### DESCARGAR
+Próximamente disponible en Google Play, más información en https://seanjl.github.io/FavorLoopWeb/
