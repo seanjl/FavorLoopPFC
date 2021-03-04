@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FirebaseAuth firebaseAuth;
     private DrawerLayout drawer;
 
+    // 04 Mar 2021 19:07 - FavorLoop v1 ha sido completado por Santi, Nacho, Sean y Juan de la UEM :)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer = findViewById(R.id.drawerLayout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        // Pulsar el titulo para que haga scroll hasta arriba @sean
-        toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // me falta meterle este codigo
-            }
-        });
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -70,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         selectedFragment = new HomeFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, selectedFragment).commit();
-
 
     }
 
