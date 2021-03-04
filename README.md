@@ -13,6 +13,8 @@ Publica un 'Loop' solicitando ayuda y alguién te responderá.
 ¡ORGANIZA EVENTOS!  
 Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitarias.
 
+FEATURES:
+
 ~~~
 
 - Interfaz sencilla e intuitiva
