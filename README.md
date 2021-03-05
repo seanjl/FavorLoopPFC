@@ -16,7 +16,7 @@ Crea 'Eventos' para reunir a grupos de personas y realizar actividades comunitar
 
 ### FEATURES
 
-
+- Diseño minimalista
 - Interfaz sencilla e intuitiva
 - Publica Loops para recibir ayuda
 - Conoce a gente nueva
