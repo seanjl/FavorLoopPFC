@@ -10,6 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FavorLoop">
         <activity
+            android:name=".AboutUsActivity"
+            android:label="Sobre FavorLoop"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".MisEventos"
+            android:label="Mis Eventos"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MisLoops"
+            android:label="Mis Loops"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MiPerfilActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".EditarPerfil"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CommentActivity"
+            android:label="Comentarios"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".PerfilesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".EventoDetail"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -36,9 +61,7 @@
         <activity
             android:name=".IntroActivity"
             android:theme="@style/Theme.FavorLoopNoActionBar" />
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,6 +1,7 @@
 package com.dam.favorloop.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.dam.favorloop.CommentActivity;
 import com.dam.favorloop.R;
 import com.dam.favorloop.model.Evento;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -68,9 +75,21 @@ public class EventAdapter
         } else {
             holder.tvTituloEvento.setVisibility(View.VISIBLE);
             holder.tvTituloEvento.setText(event.getTitulo());
+            holder.tvFecha.setText(event.getFecha());
         }
 
 //        loopInfo(holder.imageProfile, holder.username, loop.getPublisher());
+
+        getComments(event.getId(), holder.commentsCounter);
+        holder.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), CommentActivity.class);
+                i.putExtra("POST_ID", event.getId());
+                i.putExtra("PUBLISHER_ID", event.getPublisher());
+                mContext.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -84,6 +103,8 @@ public class EventAdapter
         TextView tvTituloEvento;
         TextView tvLugar;
         TextView tvFecha;
+        ImageView comment;
+        TextView commentsCounter;
 
         public EventViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -92,6 +113,23 @@ public class EventAdapter
             tvTituloEvento = itemView.findViewById(R.id.tvTituloEvento);
             tvLugar = itemView.findViewById(R.id.tvLugar);
             tvFecha = itemView.findViewById(R.id.tvFecha);
+            comment = itemView.findViewById(R.id.comment);
+            commentsCounter = itemView.findViewById(R.id.commentsCounter);
         }
+    }
+
+    private void getComments(String postid, TextView comments) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Comentarios").child(postid);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                comments.setText(snapshot.getChildrenCount() + "");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

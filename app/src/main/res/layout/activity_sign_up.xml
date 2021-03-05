@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFF"
             android:fontFamily="@font/nunito_sans"
-            android:hint="Fullname" />
+            android:hint="Nombre completo" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFF"
             android:fontFamily="@font/nunito_sans"
-            android:hint="Username" />
+            android:hint="Nombre de usuario" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFF"
             android:fontFamily="@font/nunito_sans"
-            android:hint="Password"
+            android:hint="Contraseña"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +110,7 @@
         android:layout_height="64dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/nunito_sans"
-        android:text="@string/tv_sign_up"
+        android:text="Registrarse"
         android:textColor="@color/white"
         android:onClick="signUpUser"
         android:textSize="16sp"
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_sans"
             android:gravity="center"
-            android:text="@string/tv_log_in" />
+            android:text="¿Ya tienes una cuenta?" />
 
         <TextView
             android:layout_width="match_parent"
@@ -143,7 +143,7 @@
             android:layout_marginLeft="8dp"
             android:fontFamily="@font/nunito_sans_extrabold"
             android:gravity="center"
-            android:text="LOG IN"
+            android:text="INICIA SESIÓN"
             android:textColor="#252837" />
     </LinearLayout>
 

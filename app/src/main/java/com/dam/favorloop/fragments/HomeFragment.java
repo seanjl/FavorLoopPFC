@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,9 +16,7 @@ import com.dam.favorloop.LoopDetail;
 import com.dam.favorloop.R;
 import com.dam.favorloop.adapters.LoopAdapter;
 import com.dam.favorloop.model.Loop;
-import com.dam.favorloop.model.Usuario;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +33,7 @@ public class HomeFragment extends Fragment {
     RecyclerView rvLoop;
     LoopAdapter loopAdapter;
     List<Loop> loopList;
+    LinearLayout alertaHome;
     private List<String> followingList;
 
     @Override
@@ -43,6 +42,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        alertaHome = view.findViewById(R.id.alertaHome);
         rvLoop = view.findViewById(R.id.rvLoop);
         rvLoop.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -96,6 +96,10 @@ public class HomeFragment extends Fragment {
                             loopList.add(loop);
                         }
                     }
+                }
+
+                if (!loopList.isEmpty()) {
+                    alertaHome.setVisibility(View.INVISIBLE);
                 }
 
                 loopAdapter.setListener(new View.OnClickListener() {

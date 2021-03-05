@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.dam.favorloop.R;
 import com.dam.favorloop.ResourcesHelper;
 import com.dam.favorloop.model.Usuario;
@@ -26,20 +27,34 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AmigosAdapter extends RecyclerView.Adapter<AmigosAdapter.ItemViewHolder> {
+public class AmigosAdapter
+        extends RecyclerView.Adapter<AmigosAdapter.ItemViewHolder>
+        implements View.OnClickListener {
 
     private ArrayList<Usuario> listaUsuarios;
     private FirebaseUser firebaseUser;
+    private View.OnClickListener listener;
 
     public AmigosAdapter(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
+    }
+
+    public void setListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
     }
 
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.perfil_item, parent, false);
-//        v.setOnClickListener(this);
+        v.setOnClickListener(this);
         ItemViewHolder ivh = new ItemViewHolder(v);
         return ivh;
     }
@@ -115,6 +130,8 @@ public class AmigosAdapter extends RecyclerView.Adapter<AmigosAdapter.ItemViewHo
         public void bindItem(Usuario user) {
             username.setText(user.getUsername());
             fullname.setText(user.getFullname());
+            Glide.with(profilePic).load(user.getFotoPerfilUrl())
+                    .into(profilePic);
         }
     }
 

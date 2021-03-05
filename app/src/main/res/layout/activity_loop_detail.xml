@@ -46,7 +46,6 @@
                     android:id="@+id/tvDescripcionAyuda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/nunito_sans"
                     android:text="@string/tv_descripcion_ayuda"
                     android:textSize="16sp"
@@ -56,7 +55,7 @@
                     android:id="@+id/separador"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     android:background="@android:color/darker_gray"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvDescripcionAyuda" />
@@ -65,7 +64,7 @@
                     android:id="@+id/llSeparador1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/separador">
@@ -84,64 +83,64 @@
 
                 </LinearLayout>
 
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/ivUsuarioAy"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="32dp"
-                    android:src="@drawable/foto"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/infoUsuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/llSeparador1" />
+                    app:layout_constraintTop_toTopOf="@id/llSeparador1">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/ivUsuarioAy"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/infoUsuario" />
 
-                </de.hdodenhof.circleimageview.CircleImageView>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/tvNombreAy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Nombre del usuario"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/ivUsuarioAy"
-                    app:layout_constraintTop_toTopOf="@id/ivUsuarioAy" />
+                    </de.hdodenhof.circleimageview.CircleImageView>
 
-                <TextView
-                    android:id="@+id/tvOcupacionAy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Ocupación del usuario"
-                    app:layout_constraintStart_toStartOf="@id/tvNombreAy"
-                    app:layout_constraintTop_toBottomOf="@id/tvNombreAy" />
+                    <TextView
+                        android:id="@+id/tvNombreAy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Nombre del usuario"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/ivUsuarioAy"
+                        app:layout_constraintTop_toTopOf="@id/ivUsuarioAy" />
 
-                <TextView
-                    android:id="@+id/tvUbicacionAy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Ubicación"
-                    app:layout_constraintStart_toStartOf="@id/tvOcupacionAy"
-                    app:layout_constraintTop_toBottomOf="@id/tvOcupacionAy" />
+                    <TextView
+                        android:id="@+id/tvOcupacionAy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Ocupación del usuario"
+                        app:layout_constraintStart_toStartOf="@id/tvNombreAy"
+                        app:layout_constraintTop_toBottomOf="@id/tvNombreAy" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAyudar"
                     style="@style/ButtonStraight"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="16dp"
                     android:fontFamily="@font/nunito_sans"
-                    android:text="Quiero ayudar"
+                    android:text="Enviar mensaje"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ivUsuarioAy" />
+                    app:layout_constraintTop_toBottomOf="@id/infoUsuario" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

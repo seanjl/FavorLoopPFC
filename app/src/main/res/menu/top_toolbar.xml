@@ -3,16 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/navSalir"
+        android:icon="@drawable/ic_logout"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/navNotificacion"
         android:icon="@drawable/ic_notificacion"
         android:title=""
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/navMessage"
         android:icon="@drawable/ic_mensajes"
         android:title=""
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
+    <item
+        android:id="@+id/navMisEventos"
+        android:icon="@drawable/ic_person"
+        android:title=""
+        app:showAsAction="always" />
 
 </menu>

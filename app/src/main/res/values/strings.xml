@@ -116,4 +116,16 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="tv_descripcion_ayuda">Lorem ipsum dolor sit amet consectetur, adipiscing elit vestibulum posuere donec habitasse, non montes himenaeos odio. Tincidunt sagittis viverra aptent magnis cursus, quis felis blandit justo, tempus in taciti mus.</string>
+    <string name="iv_alerta_mis_eventos">Aún no has creado ningún evento. ¿Quieres realizar uno? Ve a la sección de añadir eventos para crearlo</string>
+    <string name="iv_alerta_mis_loops">Aún no has creado ningún loop. ¿Necesitas publicar una ayuda? Ve a la sección de añadir Loop para crearla</string>
+    <string name="iv_alerta_home">!Hola! Aquí aparecerán los loops de tus amigos, aún no tienes contactos? Ve a la sección de comunidad para conocer nuevas personas</string>
+
+    <string name="tv_aboutus_version">Versión Alpha</string>
+    <string name="tv_aboutus_desc">FavorLoop es una app desarollada por estudiantes de Desarrollo de Aplicaciones Multiplataforma de la Universidad Europea de Madrid.</string>
+    <string name="tv_aboutus_desc2">https://seanjl.github.io/FavorLoopWeb/</string>
+    <string name="tv_aboutus_desc3">© 2021</string>
+    <string name="tv_aboutus_credits1">Santiago Torres</string>
+    <string name="tv_aboutus_credits2">Nacho Jimenez</string>
+    <string name="tv_aboutus_credits3">Sean Leitch</string>
+    <string name="tv_aboutus_credits4">Juan Moreno</string>
 </resources>

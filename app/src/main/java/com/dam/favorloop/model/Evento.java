@@ -11,17 +11,19 @@ public class Evento implements Parcelable {
     private String lugar;
     private String imageUrl;
     private String publisher;
+    private String fecha;
 
     public Evento() {
     }
 
-    public Evento(String id, String titulo, String descripcion, String lugar, String imageUrl, String publisher) {
+    public Evento(String id, String titulo, String descripcion, String lugar, String imageUrl, String publisher, String fecha) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.lugar = lugar;
         this.imageUrl = imageUrl;
         this.publisher = publisher;
+        this.fecha = fecha;
     }
 
     protected Evento(Parcel in) {
@@ -31,6 +33,7 @@ public class Evento implements Parcelable {
         lugar = in.readString();
         imageUrl = in.readString();
         publisher = in.readString();
+        fecha = in.readString();
     }
 
     public static final Creator<Evento> CREATOR = new Creator<Evento>() {
@@ -93,6 +96,14 @@ public class Evento implements Parcelable {
         this.publisher = publisher;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -106,5 +117,6 @@ public class Evento implements Parcelable {
         dest.writeString(lugar);
         dest.writeString(imageUrl);
         dest.writeString(publisher);
+        dest.writeString(fecha);
     }
 }

@@ -31,14 +31,14 @@ public class IntroAdapter extends PagerAdapter {
 
     public String[] slideTitles = {
             "¿Qué es Favorloop?",
-            "¿Qué buscamos?",
-            "¿A quién va dirigido?"
+            "¡Solicita ayuda creando un Loop!",
+            "Organiza Eventos"
     };
 
     public String[] slideText = {
-            "Lorem ipsum dolor sit amet consectetur, adipiscing elit vel fusce posuere, dictum luctus donec auctor.",
-            "Lorem ipsum dolor sit amet consectetur, adipiscing elit vel fusce posuere, dictum luctus donec auctor.",
-            "Lorem ipsum dolor sit amet consectetur, adipiscing elit vel fusce posuere, dictum luctus donec auctor."
+            "FavorLoop es una plataforma que te permite ayudar y recibir ayuda",
+            "Un 'Loop' es una publicación para pedir ayuda. La gente verá tus Loops y podrá contactar contigo",
+            "Publica un 'Event' para reunir a un grupo de personas y realizar una actividad comunitaria"
     };
 
     @Override
